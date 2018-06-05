@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { HomePage} from '../home/home';
 import { FirebaseApi } from '../../api/firebaseApi';
 
 /**
@@ -20,6 +20,7 @@ export class LoginPage {
   fbApi: FirebaseApi;
   constructor(public navCtrl: NavController, public navParams: NavParams, private httpClient: HttpClient) {
 
+    this.navCtrl = navCtrl;
     //add login code here
     //cf.:https://scotch.io/tutorials/build-an-ionic-app-with-user-authentication
 
@@ -43,16 +44,20 @@ export class LoginPage {
   }
 
   signIn() {
-    this.fbApi.login.signIn();
+    //Test only so that I am signed out before signing in
+    //Todo check if user is loaded on start
+    this.fbApi.login.signOut();
+    this.fbApi.login.signIn(this);
   }
 
-  onAuthStateChanged(user: any) {
-    alert(user);
+  onAuthStateChanged(context: any,user: any) {
+    //alert(user);
     if (user) { // User is signed in!
       // Get profile pic and user's name from the Firebase user object.
       var profilePicUrl = user.photoURL;
       var userName = user.displayName;
-      alert(userName);
+      //alert(userName);
+      context.navCtrl.push(HomePage);
     }
   }
 

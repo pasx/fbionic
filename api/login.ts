@@ -9,12 +9,16 @@ export class Login {
         this.auth_ = firebase.auth();
     }
 
-    public signIn() {
+    get currentUser(): any {
+        return this.auth_.currentUser;
+    }
+
+    public signIn(context: any) {
         // Sign in Firebase using popup auth and Google as the identity provider.
         var provider = new this.auth.GoogleAuthProvider();
-        this.auth_.signInWithPopup(provider);        
+        this.auth_.signInWithPopup(provider);
         // Initiates Firebase auth and listen to auth state changes.
-        this.auth_.onAuthStateChanged(this.onAuthStateChanged.bind(this));
+        this.auth_.onAuthStateChanged(this.onAuthStateChanged.bind(this, context));
     };
 
     public signOut = function () {
@@ -22,13 +26,13 @@ export class Login {
         this.auth_.signOut();
     };
 
-    set onAuthStateChangedCallback (callback:any) {
+    set onAuthStateChangedCallback(callback: any) {
         this._onAuthStateChangedCallback = callback;
     };
 
-    public onAuthStateChanged(user){
-        if(!this._onAuthStateChangedCallback) return; //no callback was set
-        this._onAuthStateChangedCallback(user);
+    public onAuthStateChanged(context, user) {
+        if (!this._onAuthStateChangedCallback) return; //no callback was set
+        this._onAuthStateChangedCallback(context, user);
     }
 }
 
