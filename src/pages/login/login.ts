@@ -43,11 +43,23 @@ export class LoginPage {
     this.fbApi.login.onAuthStateChangedCallback = this.onAuthStateChanged;
   }
 
+  get loggedIn(): boolean {
+      return this.fbApi && !!this.fbApi.login.currentUser;
+  }
+
   signIn() {
     // //Test only so that I am signed out before signing in
     // //Todo check if user is loaded on start
     // this.fbApi.login.signOut();
     this.fbApi.login.signIn(this);
+  }
+
+  rtdb(){
+    this.navCtrl.push(HomePage);
+  }
+
+  firestore(){
+    this.navCtrl.push(HomePage);
   }
 
   onAuthStateChanged(context: any,user: any) {
@@ -57,7 +69,6 @@ export class LoginPage {
       var profilePicUrl = user.photoURL;
       var userName = user.displayName;
       //alert(userName);
-      context.navCtrl.push(HomePage);
     }
   }
 

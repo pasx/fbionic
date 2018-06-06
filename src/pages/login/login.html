@@ -21,6 +21,12 @@
 		  <button id="sign-in" (click)="signIn()" ion-button color="positive" block>
 			Login with Google...
 		  </button>
+		  <button id="sign-in" (click)="rtdb()" ion-button color="positive" [disabled]="!loggedIn" block>
+			Firebase RTDB...
+		  </button>
+		  <button id="sign-in" (click)="firestore()" ion-button color="positive" [disabled]="!loggedIn" block>
+      Firestore...
+		  </button>
       </div>
     </div>
 </form>

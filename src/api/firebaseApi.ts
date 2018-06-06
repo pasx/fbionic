@@ -1,11 +1,14 @@
 import * as firebase from "firebase";
 import { Login } from './login';
+import { Database } from './database';
 
 export class FirebaseApi {
     //firebase
     firebase: any;
     //Login
     login: Login;
+    //Database
+    database: Database;
     //FirebaseApi
     static _instance : FirebaseApi;
 
@@ -15,8 +18,7 @@ export class FirebaseApi {
         firebase.initializeApp(config);
         //login
         this.login = new Login();
-        // this.database = firebase.database();
+        this.database = new Database();
         // this.storage = firebase.storage();
     }
 }
-

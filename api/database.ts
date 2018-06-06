@@ -34,9 +34,8 @@ export class Database {
         var dataRef = this.db.ref(ref);
         // Make sure we remove all previous listeners.
         dataRef.off();
-        var setData = callback;//callback.bind(this);
-        dataRef.limitToLast(limit).on('child_added', setData);
-        dataRef.limitToLast(limit).on('child_changed', setData);
+        dataRef.limitToLast(limit).on('child_added', callback);
+        dataRef.limitToLast(limit).on('child_changed', callback);
         return dataRef;
       };
 }
