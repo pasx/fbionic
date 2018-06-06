@@ -38,15 +38,15 @@ export class LoginPage {
     new FirebaseApi(config);
 
     this.fbApi = FirebaseApi._instance;
-    let firebase = this.fbApi.firebase;
+    //let firebase = this.fbApi.firebase;
 
     this.fbApi.login.onAuthStateChangedCallback = this.onAuthStateChanged;
   }
 
   signIn() {
-    //Test only so that I am signed out before signing in
-    //Todo check if user is loaded on start
-    this.fbApi.login.signOut();
+    // //Test only so that I am signed out before signing in
+    // //Todo check if user is loaded on start
+    // this.fbApi.login.signOut();
     this.fbApi.login.signIn(this);
   }
 
