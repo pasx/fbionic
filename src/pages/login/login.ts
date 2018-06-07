@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { HomeRtdbPage} from '../homeRtdb/homeRtdb';
 import { HomePage} from '../home/home';
 import { FirebaseApi } from '../../api/firebaseApi';
 
@@ -55,7 +56,7 @@ export class LoginPage {
   }
 
   rtdb(){
-    this.navCtrl.push(HomePage);
+    this.navCtrl.push(HomeRtdbPage);
   }
 
   firestore(){
