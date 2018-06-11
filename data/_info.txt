@@ -1,0 +1,7 @@
+
+Steps to import data in Firestore DB are described here.
+
+From the console, cd to this folder and enter:
+> node impcld.js
+
+https://stackoverflow.com/questions/46640981/how-to-import-csv-or-json-to-firebase-cloud-firestore/50720460#50720460

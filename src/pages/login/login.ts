@@ -2,16 +2,11 @@ import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { HomeRtdbPage} from '../homeRtdb/homeRtdb';
-import { HomePage} from '../home/home';
+import { HomeRtdbPage } from '../homeRtdb/homeRtdb';
+import { HomePage } from '../home/home';
+import { AboutPage } from '../about/about';
 import { FirebaseApi } from '../../api/firebaseApi';
 
-/**
- * Generated class for the LoginPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @Component({
   selector: 'page-login',
@@ -35,39 +30,41 @@ export class LoginPage {
   }
 
   initFirebase(config) {
-    // Initialize Firebase
     new FirebaseApi(config);
-
     this.fbApi = FirebaseApi._instance;
-    //let firebase = this.fbApi.firebase;
-
     this.fbApi.login.onAuthStateChangedCallback = this.onAuthStateChanged;
   }
 
   get loggedIn(): boolean {
-      return this.fbApi && !!this.fbApi.login.currentUser;
+    return this.fbApi && !!this.fbApi.login.currentUser;
   }
 
   signIn() {
-    // //Test only so that I am signed out before signing in
-    // //Todo check if user is loaded on start
-    // this.fbApi.login.signOut();
     this.fbApi.login.signIn(this);
   }
 
-  rtdb(){
+  rtdb() {
     this.navCtrl.push(HomeRtdbPage);
   }
 
-  firestore(){
+  firestore() {
     this.navCtrl.push(HomePage);
   }
 
-  onAuthStateChanged(context: any,user: any) {
-    //alert(user);
+  about() {
+    this.navCtrl.push(AboutPage);
+  }
+
+  signOut() {
+    this.fbApi.login.signOut();
+  }
+
+  onAuthStateChanged(context: any, user: any) {
     if (user) { // User is signed in!
-      // Get profile pic and user's name from the Firebase user object.
-      var profilePicUrl = user.photoURL;
+
+      // // Get profile pic and user's name from the Firebase user object.
+      // var profilePicUrl = user.photoURL;
+
       var userName = user.displayName;
       //alert(userName);
     }

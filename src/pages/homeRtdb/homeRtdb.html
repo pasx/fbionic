@@ -5,6 +5,7 @@
 </ion-header>
 
 <ion-content>
+  
   <ion-list>
     <ion-card *ngFor="let message of messages">
       <ion-item>
@@ -21,41 +22,8 @@
           <p>{{message.text}}</p>
         </div>
 
-        <a class="item item-icon-left" href="#/app/gallery-preview/1">
-          <i class="icon ion-arrow-right-c"></i>
-          Read more
-        </a>
       </ion-item>
     </ion-card>
   </ion-list>
-  <!-- 
-
-
-  <ion-list>
-    <ion-item-sliding *ngFor="let message of messages">
-      <ion-item color="none" id="{{message.id}}">
-        <ion-thumbnail item-left>
-          <img src="{{message.photoUrl}}" />
-        </ion-thumbnail>
-        <h2>
-          {{message.name}}
-        </h2>
-        <p>{{message.text}}</p>
-      </ion-item>
-      <ion-item-options side="left">
-        <button ion-button expandable color="secondary" (click)="promoteItem()">
-          <ion-icon name="checkbox-outline"></ion-icon>
-        </button>
-      </ion-item-options>
-      <ion-item-options side="right">
-        <button ion-button expandable color="danger" (click)="demoteItem()">
-          <ion-icon name="thumbs-down"></ion-icon>
-        </button>
-      </ion-item-options>
-    </ion-item-sliding>
-  </ion-list> -->
-
-
-
 
 </ion-content>

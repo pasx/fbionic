@@ -1,0 +1,21 @@
+{
+  "messages" : {
+    "abc" : {
+      "name" : "anonymous",
+      "text" : "Yeeah!"
+    },
+    "def" : {
+      "name" : "anonymous",
+      "text" : "How are you"
+    },
+    "ghi" : {
+      "name" : "anonymous",
+      "text" : "I am fine"
+    },
+    "jkl" : {
+      "name" : "Bibo Pulazi",
+      "photoUrl" : "https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg",
+      "text" : "Hey buddy!.."
+    }
+  }
+}

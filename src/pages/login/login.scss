@@ -1,41 +1,44 @@
 page-login {
-}
-#login {
-/*https://images.freeimages.com/images/large-previews/a05/cloudy-sunset-2-1247960.jpg
 
-https://images.freeimages.com/images/large-previews/341/great-ocean-road-1381766.jpg
-*/
+  .button{
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-  background-image: url('https://images.freeimages.com/images/large-previews/5ff/beach-life-1396002.jpg') ;
-  /*background: #1c2627 url("../img/login_bg.jpg") no-repeat center center;*/
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  #login {
+    background-image: url('https://images.freeimages.com/images/large-previews/5ff/beach-life-1396002.jpg') ;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 
-  .scroll-content {
-    display: table !important;
-    width: 100% !important;
-    height: 100% !important;
+    .scroll-content {
+      display: table !important;
+      width: 100% !important;
+      height: 100% !important;
 
-    form {
-      display: table-cell;
-      vertical-align: middle;
+      form {
+        display: table-cell;
+        vertical-align: middle;
 
-      .header {
-        padding-bottom: 20px;
+        .header {
+          padding-bottom: 20px;
 
-        img {
-          display: block;
-          width: 80%;
-          margin: 0 auto;
+          img {
+            display: block;
+            width: 80%;
+            margin: 0 auto;
+          }
         }
-      }
 
-      .button.button-light.active, .button.button-light.activated {
-        color: #fff;
-        opacity: inherit;
+        .button.button-light.active, .button.button-light.activated {
+          color: #fff;
+          opacity: inherit;
+        }
       }
     }
   }
+
+  
 }

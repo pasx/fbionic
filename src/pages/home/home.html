@@ -6,17 +6,23 @@
 
 <ion-content id="home" style="background-color:#f5f5f5;">   
     <ion-list>
-      <ion-card *ngFor="let datum of data">
-        <ion-item color="none" id="{{datum.id}}" >
-          <ion-thumbnail item-left>
-            <img src="{{datum.imageUrl}}" />
-          </ion-thumbnail>
-          <h2 text-uppercase no-margin no-padding>
-            {{datum.header}}
-          </h2>
-          <p no-padding no-margin text-wrap>{{datum.text}}</p>
-        </ion-item>
-      </ion-card>
+        <ion-card *ngFor="let message of messages">
+            <ion-item>
+              <ion-avatar item-left>
+                <img src="https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg" />
+              </ion-avatar>
+      
+      
+              <h2> {{message.name}}</h2>
+              <p> {{message.key}}</p>
+      
+      
+              <div class="item item-image">
+                <p>{{message.text}}</p>
+              </div>
+ 
+            </ion-item>
+          </ion-card>
     </ion-list>
 
 
