@@ -6,6 +6,15 @@ page-login {
     margin-right: auto;
   }
 
+  div #header-left{
+    position:absolute;
+  }
+
+  .about{
+    width:36px;
+    height:36px;
+  }
+
   #login {
     background-image: url('https://images.freeimages.com/images/large-previews/5ff/beach-life-1396002.jpg') ;
     -webkit-background-size: cover;

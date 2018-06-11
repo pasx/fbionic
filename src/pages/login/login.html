@@ -2,9 +2,9 @@
 
 <ion-content padding="true" scroll="false" id="login">
 
-<div>
-		<button ion-button icon-only  (click)="about()">
-				<ion-icon name="information-circle"></ion-icon>
+<div id="header-left">
+		<button ion-button icon-only class="about" color="light" (click)="about()" [disabled]="!loggedIn" round>
+				<ion-icon name="information"></ion-icon>
 		</button>
 </div>
 
